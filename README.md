@@ -24,10 +24,15 @@ Serial output: sout = Q[3]   (the bit about to be shifted out)
 
 module shift_reg (
     input  wire       clk,  // clock
+    
     input  wire       rst,  // asynchronous active-high reset
+    
     input  wire       sin,  // serial input
+    
     output wire       sout, // serial output (MSB, about to shift out)
+    
     output reg  [3:0] Q     // parallel output
+    
 );
     always @(posedge clk or posedge rst) begin
         if (rst)
